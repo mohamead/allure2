@@ -51,8 +51,29 @@ val startScripts by tasks.existing(CreateStartScripts::class) {
     }
 }
 
+tasks.test {
+    useJUnitPlatform()
+}
+
 tasks.build {
     dependsOn(tasks.installDist)
+}
+
+/*
+ * Executable Jar File Assembly.
+ */
+val fatJar by tasks.creating(Jar::class) {
+    archiveBaseName = "allure-commandline"
+    isZip64 = true
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    manifest {
+        attributes["Implementation-Title"] = "allure-commandline"
+        attributes["Implementation-Version"] = rootProject.version
+        attributes["Main-Class"] = "io.qameta.allure.CommandLine"
+    }
+    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+    with(tasks.jar.get() as CopySpec)
+    dependsOn(tasks.jar)
 }
 
 val preparePackageOutput by tasks.creating {

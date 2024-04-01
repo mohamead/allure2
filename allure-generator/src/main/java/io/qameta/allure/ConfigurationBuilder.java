@@ -121,8 +121,7 @@ public class ConfigurationBuilder {
                 new LaunchPlugin(),
                 new Allure1Plugin(),
                 new Allure1EnvironmentPlugin(),
-                new Allure2Plugin(),
-                new GaPlugin()
+                new Allure2Plugin()
         ));
         return this;
     }

@@ -78,7 +78,7 @@ public class CommandLine {
         this.commander.setProgramName(PROGRAM_NAME);
     }
 
-    public static void main(final String[] args) throws InterruptedException {
+    public static void main(final String[] args) {
         final String allureHome = System.getenv("APP_HOME");
         final CommandLine commandLine;
         if (Objects.isNull(allureHome)) {
@@ -87,10 +87,9 @@ public class CommandLine {
         } else {
             commandLine = new CommandLine(Paths.get(allureHome));
         }
-        final ExitCode exitCode = commandLine
+        commandLine
                 .parse(args)
                 .orElseGet(commandLine::run);
-        System.exit(exitCode.getCode());
     }
 
     @SuppressWarnings({"PMD.AvoidLiteralsInIfCondition", "ReturnCount"})

@@ -161,9 +161,8 @@ public class ReportWebGenerator {
         return "plugin/" + config.getId() + "/" + cssFile;
     }
 
-    private static byte[] readResource(final String resourceName) {
-        try (InputStream is = Thread.currentThread()
-                .getContextClassLoader().getResourceAsStream(resourceName)) {
+    private byte[] readResource(final String resourceName) {
+        try (InputStream is = this.getClass().getClassLoader().getResourceAsStream(resourceName)) {
             if (Objects.isNull(is)) {
                 throw new ReportGenerationException(
                         String.format("Resource %s not found", resourceName));
@@ -174,7 +173,7 @@ public class ReportWebGenerator {
         }
     }
 
-    private static String dataBase64(final String contentType, final String resourceName) {
+    private String dataBase64(final String contentType, final String resourceName) {
         final byte[] resource = readResource(resourceName);
         return dataUrl(contentType, resource);
     }
