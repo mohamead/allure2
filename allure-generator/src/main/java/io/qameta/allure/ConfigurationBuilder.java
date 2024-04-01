@@ -33,7 +33,6 @@ import io.qameta.allure.duration.DurationPlugin;
 import io.qameta.allure.duration.DurationTrendPlugin;
 import io.qameta.allure.environment.Allure1EnvironmentPlugin;
 import io.qameta.allure.executor.ExecutorPlugin;
-import io.qameta.allure.ga.GaPlugin;
 import io.qameta.allure.history.HistoryPlugin;
 import io.qameta.allure.history.HistoryTrendPlugin;
 import io.qameta.allure.idea.IdeaLinksPlugin;
