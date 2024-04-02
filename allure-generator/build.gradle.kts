@@ -101,6 +101,7 @@ tasks.test {
 val allurePlugin by configurations.existing
 
 dependencies {
+    implementation(project(mapOf("path" to ":junit-xml-plugin")))
     allurePlugin(project(path = ":behaviors-plugin", configuration = "allurePlugin"))
     allurePlugin(project(path = ":packages-plugin", configuration = "allurePlugin"))
     allurePlugin(project(path = ":screen-diff-plugin", configuration = "allurePlugin"))

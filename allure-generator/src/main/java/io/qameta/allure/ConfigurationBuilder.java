@@ -37,6 +37,7 @@ import io.qameta.allure.history.HistoryPlugin;
 import io.qameta.allure.history.HistoryTrendPlugin;
 import io.qameta.allure.idea.IdeaLinksPlugin;
 import io.qameta.allure.influxdb.InfluxDbExportPlugin;
+import io.qameta.allure.junitxml.JunitXmlPlugin;
 import io.qameta.allure.launch.LaunchPlugin;
 import io.qameta.allure.mail.MailPlugin;
 import io.qameta.allure.owner.OwnerPlugin;
@@ -120,7 +121,8 @@ public class ConfigurationBuilder {
                 new LaunchPlugin(),
                 new Allure1Plugin(),
                 new Allure1EnvironmentPlugin(),
-                new Allure2Plugin()
+                new Allure2Plugin(),
+                new JunitXmlPlugin()
         ));
         return this;
     }
