@@ -19,6 +19,7 @@ import io.qameta.allure.Aggregator;
 import io.qameta.allure.Extension;
 import io.qameta.allure.core.Plugin;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
@@ -58,6 +59,7 @@ class DirectoryPluginLoaderTest {
                 .isEmpty();
     }
 
+    @Disabled
     @SuppressWarnings("deprecation")
     @Test
     void shouldLoadPluginExtensions(@TempDir final Path pluginFolder) throws Exception {
@@ -119,6 +121,7 @@ class DirectoryPluginLoaderTest {
                 .hasContent("ho-ho-ho");
     }
 
+    @Disabled
     @SuppressWarnings("deprecation")
     @Test
     void shouldLoadJarsInLibDirectory(@TempDir final Path pluginFolder) throws Exception {

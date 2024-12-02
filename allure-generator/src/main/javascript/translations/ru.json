@@ -111,6 +111,12 @@
       "selected_0": "Выбран {{count}} тест ({{percent}}%) с длительностью выше {{duration}}",
       "selected_1": "Выбрано {{count}} теста ({{percent}}%) с длительностью выше {{duration}}",
       "selected_2": "Выбрано {{count}} тестов ({{percent}}%) с длительностью выше {{duration}}"
+    },
+    "behaviors": {
+      "name": "Функциональность"
+    },
+    "packages": {
+      "name": "Пакеты"
     }
   },
   "testResult": {
@@ -210,6 +216,10 @@
     },
     "trend": {
       "name": "Тренд"
+    },
+    "behaviors": {
+      "name": "Функциональность",
+      "showAll": "показать все"
     }
   }
 }

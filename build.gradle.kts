@@ -71,41 +71,42 @@ subprojects {
     apply(plugin = "com.diffplug.spotless")
     apply(plugin = "io.spring.dependency-management")
 
-    val orgSlf4jVersion = "2.0.12"
-    val comSquareupRetrofit2Version = "2.10.0"
+    val orgSlf4jVersion = "2.0.16"
+    val comSquareupRetrofit2Version = "2.11.0"
 
     dependencyManagement {
         imports {
-            mavenBom("com.fasterxml.jackson:jackson-bom:2.17.0")
+            mavenBom("com.fasterxml.jackson:jackson-bom:2.18.1")
             mavenBom("com.squareup.okhttp3:okhttp-bom:4.12.0")
             // latest version that supports java 8
             mavenBom("com.vladsch.flexmark:flexmark-all:0.62.2")
-            mavenBom("io.qameta.allure:allure-bom:2.26.0")
-            mavenBom("org.junit:junit-bom:5.10.2")
+            mavenBom("io.qameta.allure:allure-bom:2.29.0")
+            mavenBom("org.junit:junit-bom:5.11.3")
         }
         dependencies {
             dependency("ch.qos.logback:logback-classic:1.3.14")
             dependency("com.beust:jcommander:1.82")
-            dependency("com.github.spotbugs:spotbugs-annotations:4.8.3")
-            dependency("com.github.spotbugs:spotbugs:4.8.3")
-            dependency("com.opencsv:opencsv:4.6")
-            dependency("com.puppycrawl.tools:checkstyle:10.14.2")
+            dependency("com.github.spotbugs:spotbugs-annotations:4.8.6")
+            dependency("com.github.spotbugs:spotbugs:4.8.6")
+            dependency("com.opencsv:opencsv:5.9")
+            dependency("com.puppycrawl.tools:checkstyle:10.20.0")
             dependency("com.squareup.retrofit2:converter-jackson:${comSquareupRetrofit2Version}")
             dependency("com.squareup.retrofit2:retrofit:${comSquareupRetrofit2Version}")
             dependency("commons-beanutils:commons-beanutils:1.9.4")
-            dependency("commons-io:commons-io:2.15.1")
+            dependency("commons-io:commons-io:2.17.0")
             dependency("javax.xml.bind:jaxb-api:2.3.1")
-            dependency("net.sourceforge.pmd:pmd-java:6.55.0")
+            dependency("net.sourceforge.pmd:pmd-java:7.1.0")
             dependency("org.allurefw:allure1-model:1.0")
-            dependency("org.apache.commons:commons-lang3:3.14.0")
+            dependency("org.apache.commons:commons-collections4:4.4")
+            dependency("org.apache.commons:commons-lang3:3.17.0")
             dependency("org.apache.httpcomponents:httpclient:4.5.14")
-            dependency("org.apache.tika:tika-core:2.9.1")
-            dependency("org.assertj:assertj-core:3.25.3")
+            dependency("org.apache.tika:tika-core:2.9.2")
+            dependency("org.assertj:assertj-core:3.26.3")
             dependency("org.eclipse.jetty:jetty-server:9.4.53.v20231009")
-            dependency("org.freemarker:freemarker:2.3.32")
-            dependency("org.junit-pioneer:junit-pioneer:2.2.0")
-            dependency("org.mockito:mockito-core:5.11.0")
-            dependency("org.projectlombok:lombok:1.18.32")
+            dependency("org.freemarker:freemarker:2.3.33")
+            dependency("org.junit-pioneer:junit-pioneer:2.3.0")
+            dependency("org.mockito:mockito-core:5.14.2")
+            dependency("org.projectlombok:lombok:1.18.34")
             dependency("org.slf4j:slf4j-api:${orgSlf4jVersion}")
             dependency("org.slf4j:slf4j-nop:${orgSlf4jVersion}")
             dependency("org.slf4j:slf4j-simple:${orgSlf4jVersion}")
@@ -135,6 +136,7 @@ subprojects {
     }
 
     tasks.test {
+        useJUnitPlatform()
         systemProperty("org.slf4j.simpleLogger.defaultLogLevel", "debug")
         systemProperty("allure.model.indentOutput", "true")
         systemProperty("junit.jupiter.execution.parallel.enabled", true)
@@ -144,6 +146,12 @@ subprojects {
         }
         maxHeapSize = project.property("test.maxHeapSize").toString()
         maxParallelForks = Integer.parseInt(project.property("test.maxParallelForks") as String)
+        jvmArgs = listOf(
+            "--add-opens",
+            "java.base/java.lang=ALL-UNNAMED",
+            "--add-opens",
+            "java.base/java.util=ALL-UNNAMED",
+        )
     }
 
     tasks.processTestResources {
@@ -165,6 +173,7 @@ subprojects {
         toolVersion = dependencyManagement.managedVersions["net.sourceforge.pmd:pmd-java"]!!
         ruleSets = listOf()
         ruleSetFiles = rootProject.files("gradle/quality-configs/pmd/pmd.xml")
+        targetJdk = TargetJdk.VERSION_1_7
     }
 
     spotbugs {

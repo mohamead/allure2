@@ -108,6 +108,12 @@
       "selected_0": "{{count}} wybrany test ({{percent}}%) z czasem trwania powyżej {{duration}}",
       "selected_1": "{{count}} wybrane testy ({{percent}}%) z czasem trwania powyżej {{duration}}",
       "selected_2": "{{count}} wybranych testów ({{percent}}%) z czasem trwania powyżej {{duration}}"
+    },
+    "behaviors": {
+      "name": "Zachowania"
+    },
+    "packages": {
+      "name": "Pakiety"
     }
   },
   "testResult": {
@@ -215,6 +221,10 @@
     },
     "trend": {
       "name": "Trend"
+    },
+    "behaviors": {
+      "name": "Funkcje według historii",
+      "showAll": "pokaż wszystko"
     }
   }
 }

@@ -107,6 +107,12 @@
       "name": "Timeline",
       "selected": "Selected {{count}} test ({{percent}}%) with duration above {{duration}}",
       "selected_plural": "Selected {{count}} tests ({{percent}}%) with duration above {{duration}}"
+    },
+    "behaviors": {
+      "name": "Behaviors"
+    },
+    "packages": {
+      "name": "Packages"
     }
   },
   "testResult": {
@@ -217,6 +223,10 @@
     },
     "trend": {
       "name": "Trend"
+    },
+    "behaviors": {
+      "name": "Features by stories",
+      "showAll": "show all"
     }
   }
 }

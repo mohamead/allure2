@@ -10,7 +10,7 @@ description = "Allure Report Generator"
 node {
     // repository is declared in root settings.gradle.kts
     distBaseUrl.set(null as String?)
-    version.set("16.18.0")
+    version.set("20.12.1")
     download.set(true)
 }
 
@@ -91,19 +91,12 @@ tasks.processResources {
 
 tasks.test {
     dependsOn(testWeb)
-    jvmArgs = listOf(
-        "--add-opens",
-        "java.base/java.lang=ALL-UNNAMED",
-        "java.base/java.util=ALL-UNNAMED",
-    )
 }
 
 val allurePlugin by configurations.existing
 
 dependencies {
     implementation(project(mapOf("path" to ":junit-xml-plugin")))
-    allurePlugin(project(path = ":behaviors-plugin", configuration = "allurePlugin"))
-    allurePlugin(project(path = ":packages-plugin", configuration = "allurePlugin"))
     allurePlugin(project(path = ":screen-diff-plugin", configuration = "allurePlugin"))
     annotationProcessor("org.projectlombok:lombok")
     api(project(":allure-plugin-api"))

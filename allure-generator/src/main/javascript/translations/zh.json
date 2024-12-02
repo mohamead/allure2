@@ -98,6 +98,12 @@
       "name": "时间刻度",
       "selected": "{{count}}个测试用例({{percent}}%)执行时间超过{{duration}}",
       "selected_plural": "{{count}}个测试用例({{percent}}%)执行时间超过{{duration}}"
+    },
+    "behaviors": {
+      "name": "功能"
+    },
+    "packages": {
+      "name": "包"
     }
   },
   "testResult": {
@@ -186,6 +192,10 @@
     },
     "trend": {
       "name": "趋势"
+    },
+    "behaviors": {
+      "name": "特性场景",
+      "showAll": "显示所有"
     }
   }
 }

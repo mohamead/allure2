@@ -107,6 +107,12 @@
       "name": "タイムライン",
       "selected": "{{duration}} の期間で選択された {{count}} 件のテスト ({{percent}}%)",
       "selected_plural": "{{duration}} の期間で選択された {{count}} 件のテスト ({{percent}}%)"
+    },
+    "behaviors": {
+      "name": "振る舞い"
+    },
+    "packages": {
+      "name": "パッケージ"
     }
   },
   "testResult": {
@@ -205,6 +211,10 @@
     },
     "trend": {
       "name": "傾向"
+    },
+    "behaviors": {
+      "name": "ストーリー別の機能",
+      "showAll": "全て表示"
     }
   }
 }

@@ -17,6 +17,8 @@ import "./plugins/tab-category";
 import "./plugins/tab-suites";
 import "./plugins/tab-graph";
 import "./plugins/tab-timeline";
+import "./plugins/tab-behaviors";
+import "./plugins/tab-packages";
 
 import "./plugins/widget-status";
 import "./plugins/widget-severity";
@@ -31,6 +33,7 @@ import "./plugins/widget-suites";
 import "./plugins/widget-categories";
 import "./plugins/widget-environment";
 import "./plugins/widget-executor";
+import "./plugins/widget-behaviors";
 
 import "./plugins/testresult-description";
 import "./plugins/testresult-tags";

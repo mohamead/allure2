@@ -107,6 +107,9 @@
       "name": "Tijdlijn",
       "selected": "{{count}} test ({{percent}}%) geselecteerd met een duur van meer dan {{duration}}",
       "selected_plural": "{{count}} tests ({{percent}}%) geselecteerd met een duur van meer dan {{duration}}"
+    },
+    "packages": {
+      "name": "Packages"
     }
   },
   "testResult": {

@@ -162,7 +162,8 @@ public class CommandLine {
                         generateCommand.isCleanReportDirectory(),
                         generateCommand.isSingleFileMode(),
                         generateCommand.getConfigOptions(),
-                        generateCommand.getReportNameOptions()
+                        generateCommand.getReportNameOptions(),
+                        generateCommand.getReportLanguageOptions()
                 );
             case SERVE_COMMAND:
                 return commands.serve(
@@ -170,7 +171,8 @@ public class CommandLine {
                         serveCommand.getHostPortOptions().getHost(),
                         serveCommand.getHostPortOptions().getPort(),
                         serveCommand.getConfigOptions(),
-                        serveCommand.getReportNameOptions()
+                        serveCommand.getReportNameOptions(),
+                        serveCommand.getReportLanguageOptions()
                 );
             case OPEN_COMMAND:
                 return commands.open(

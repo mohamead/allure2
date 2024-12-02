@@ -53,12 +53,12 @@ pluginManagement {
     plugins {
         id("com.bmuschko.docker-remote-api") version "9.4.0"
         id("com.diffplug.spotless") version "6.25.0"
-        id("com.github.node-gradle.node") version "7.0.2"
-        id("com.gorylenko.gradle-git-properties") version "2.4.1"
-        id("com.netflix.nebula.ospackage") version "11.8.1"
-        id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
-        id("io.spring.dependency-management") version "1.1.4"
-        id("org.owasp.dependencycheck") version "9.0.10"
-        id("com.github.spotbugs") version "6.0.9"
+        id("com.github.node-gradle.node") version "7.1.0"
+        id("com.gorylenko.gradle-git-properties") version "2.4.2"
+        id("com.netflix.nebula.ospackage") version "11.10.0"
+        id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+        id("io.spring.dependency-management") version "1.1.6"
+        id("org.owasp.dependencycheck") version "11.0.0"
+        id("com.github.spotbugs") version "6.0.26"
     }
 }

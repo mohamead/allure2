@@ -102,6 +102,12 @@
       "name": "Linha do tempo",
       "selected": "Selecionado {{count}} teste ({{percent}}%) com duração acima de {{duration}}",
       "selected_plural": "Selecionados {{count}} testes ({{percent}}%) com duração acima de {{duration}}"
+    },
+    "behaviors": {
+      "name": "Comportamentos"
+    },
+    "packages": {
+      "name": "Pacotes"
     }
   },
   "testResult": {
@@ -200,6 +206,10 @@
     },
     "trend": {
       "name": "Tendência"
+    },
+    "behaviors": {
+      "name": "Funcionalidades por história",
+      "showAll": "Mostrar tudo"
     }
   }
 }

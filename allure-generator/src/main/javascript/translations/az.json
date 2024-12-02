@@ -107,6 +107,12 @@
       "name": "Zaman şkalası",
       "selected": "Müddəti {{duration}} çox olan {{count}} test ({{percent}}%) seçildi",
       "selected_plural": "Müddəti {{duration}} çox olan {{count}} test ({{percent}}%) seçildi"
+    },
+    "behaviors": {
+      "name": "Davranışlar"
+    },
+    "packages": {
+      "name": "Paketlər"
     }
   },
   "testResult": {
@@ -212,6 +218,10 @@
     },
     "trend": {
       "name": "Trend"
+    },
+    "behaviors": {
+      "name": "Hekayələr üzrə xüsusiyyətlər",
+      "showAll": "hamısını göstər"
     }
   }
 }

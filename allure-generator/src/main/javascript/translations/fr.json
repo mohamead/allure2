@@ -107,6 +107,12 @@
       "name": "Chronologie",
       "selected": "{{count}} test sélectionné ({{percent}}%) avec une durée supérieure à {{duration}}",
       "selected_plural": "{{count}} tests sélectionnés ({{percent}}%) avec une durée supérieure à {{duration}}"
+    },
+    "behaviors": {
+      "name": "Comportements"
+    },
+    "packages": {
+      "name": "Paquets"
     }
   },
   "testResult": {
@@ -212,6 +218,10 @@
     },
     "trend": {
       "name": "Tendance"
+    },
+    "behaviors": {
+      "name": "Thèmes par histoires",
+      "showAll": "Montrer tout"
     }
   }
 }

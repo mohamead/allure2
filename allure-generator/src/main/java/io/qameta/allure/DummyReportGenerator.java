@@ -17,13 +17,13 @@ package io.qameta.allure;
 
 import io.qameta.allure.allure1.Allure1Plugin;
 import io.qameta.allure.allure2.Allure2Plugin;
+import io.qameta.allure.behaviors.BehaviorsPlugin;
 import io.qameta.allure.category.CategoriesPlugin;
 import io.qameta.allure.category.CategoriesTrendPlugin;
 import io.qameta.allure.context.FreemarkerContext;
 import io.qameta.allure.context.JacksonContext;
 import io.qameta.allure.context.MarkdownContext;
 import io.qameta.allure.context.RandomUidContext;
-import io.qameta.allure.context.ReportInfoContext;
 import io.qameta.allure.core.AttachmentsPlugin;
 import io.qameta.allure.core.Configuration;
 import io.qameta.allure.core.MarkdownDescriptionsPlugin;
@@ -40,6 +40,7 @@ import io.qameta.allure.influxdb.InfluxDbExportPlugin;
 import io.qameta.allure.launch.LaunchPlugin;
 import io.qameta.allure.mail.MailPlugin;
 import io.qameta.allure.owner.OwnerPlugin;
+import io.qameta.allure.packages.PackagesPlugin;
 import io.qameta.allure.plugin.DefaultPluginLoader;
 import io.qameta.allure.prometheus.PrometheusExportPlugin;
 import io.qameta.allure.retry.RetryPlugin;
@@ -78,7 +79,6 @@ public final class DummyReportGenerator {
     private static final Logger LOGGER = LoggerFactory.getLogger(DummyReportGenerator.class);
     private static final int MIN_ARGUMENTS_COUNT = 2;
     private static final List<Extension> EXTENSIONS = Arrays.asList(
-            new ReportInfoContext("dev"),
             new JacksonContext(),
             new MarkdownContext(),
             new FreemarkerContext(),
@@ -109,7 +109,9 @@ public final class DummyReportGenerator {
             new LaunchPlugin(),
             new Allure1Plugin(),
             new Allure1EnvironmentPlugin(),
-            new Allure2Plugin()
+            new Allure2Plugin(),
+            new BehaviorsPlugin(),
+            new PackagesPlugin()
     );
 
     private DummyReportGenerator() {
@@ -133,11 +135,11 @@ public final class DummyReportGenerator {
         LOGGER.info("Found {} plugins", plugins.size());
         plugins.forEach(plugin -> LOGGER.info(plugin.getConfig().getName()));
         final Configuration configuration = new ConfigurationBuilder()
-                .fromExtensions(EXTENSIONS)
-                .fromPlugins(plugins)
+                .withExtensions(EXTENSIONS)
+                .withPlugins(plugins)
                 .build();
         final ReportGenerator generator = new ReportGenerator(configuration);
-        generator.generateSingleFile(files[lastIndex], Arrays.asList(Arrays.copyOf(files, lastIndex)));
+        generator.generate(files[lastIndex], Arrays.asList(Arrays.copyOf(files, lastIndex)));
     }
 
     public static Path[] getFiles(final String... paths) {

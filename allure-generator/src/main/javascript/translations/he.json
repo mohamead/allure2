@@ -102,6 +102,12 @@
       "name": "ציר זמן",
       "selected": "נבחר מקרה בדיקה {{count}} ({{percent}}%) עם זמן ריצה מעל {{duration}}",
       "selected_plural": "נבחרו {{count}} מקרי בדיקה ({{percent}}%) עם זמן ריצה מעל {{duration}}"
+    },
+    "behaviors": {
+      "name": "התנהגויות"
+    },
+    "packages": {
+      "name": "חבילות"
     }
   },
   "testResult": {
@@ -200,6 +206,10 @@
     },
     "trend": {
       "name": "מגמת ריצות"
+    },
+    "behaviors": {
+      "name": "תכונות לפי סיפורי משתמש",
+      "showAll": "הצג הכול"
     }
   }
 }

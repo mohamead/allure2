@@ -107,6 +107,12 @@
       "name": "타임라인",
       "selected": "{{duration}} 이상의 시간이 소요된 {{count}} 개 테스트 ({{percent}}%)",
       "selected_plural": "{{duration}} 이상의 시간이 소요된 {{count}} 개 테스트 ({{percent}}%)"
+    },
+    "behaviors": {
+      "name": "동작"
+    },
+    "packages": {
+      "name": "패키지"
     }
   },
   "testResult": {
@@ -205,6 +211,10 @@
     },
     "trend": {
       "name": "트렌드"
+    },
+    "behaviors": {
+      "name": "스토리별 기능",
+      "showAll": "전체 보기"
     }
   }
 }

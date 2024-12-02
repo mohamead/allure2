@@ -102,6 +102,12 @@
       "name": "Zeitstrahl",
       "selected": "{{count}} Test ausgewählt ({{percent}}%) mit einer Dauer von über {{duration}}",
       "selected_plural": "{{count}} Tests ausgewählt ({{percent}}%) mit einer Dauer von über {{duration}}"
+    },
+    "behaviors": {
+      "name": "Functionaliteit"
+    },
+    "packages": {
+      "name": "Pakete"
     }
   },
   "testResult": {
@@ -200,6 +206,10 @@
     },
     "trend": {
       "name": "Trend"
+    },
+    "behaviors": {
+      "name": "Features en story’s",
+      "showAll": "Toon alle"
     }
   }
 }

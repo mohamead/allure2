@@ -33,7 +33,7 @@ class ReportGeneratorTest {
 
     @BeforeAll
     static void setUp(@TempDir final Path temp) throws Exception {
-        final Configuration configuration = new ConfigurationBuilder().useDefault().build();
+        final Configuration configuration = ConfigurationBuilder.bundled().build();
         final ReportGenerator generator = new ReportGenerator(configuration);
         output = temp.resolve("report");
         final Path resultsDirectory = Files.createDirectories(temp.resolve("results"));
@@ -67,6 +67,18 @@ class ReportGeneratorTest {
     @Test
     void shouldGenerateXunitJson() {
         assertThat(output.resolve("data/suites.json"))
+                .isRegularFile();
+    }
+
+    @Test
+    void shouldGenerateBehaviorsJson() {
+        assertThat(output.resolve("data/behaviors.json"))
+                .isRegularFile();
+    }
+
+    @Test
+    void shouldGeneratePackagesJson() {
+        assertThat(output.resolve("data/packages.json"))
                 .isRegularFile();
     }
 
@@ -145,6 +157,12 @@ class ReportGeneratorTest {
     @Test
     void shouldGenerateWidgetSuitesJson() {
         assertThat(output.resolve("widgets/suites.json"))
+                .isRegularFile();
+    }
+
+    @Test
+    void shouldGenerateWidgetBehaviorsJson() {
+        assertThat(output.resolve("widgets/behaviors.json"))
                 .isRegularFile();
     }
 
